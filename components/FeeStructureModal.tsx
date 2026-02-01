@@ -99,29 +99,29 @@ const FeeStructureModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
         </button>
 
         <div className="p-8">
-          <h1 className="bento-title special-font text-white mb-2">Fee Str<b>u</b>cture</h1>
-          <p className="font-circular-web text-sm text-white/70 mb-8">Complete breakdown of all fee types</p>
+          <h1 className="text-4xl font-bold text-white mb-2" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif' }}>Fee Structure</h1>
+          <p className="text-sm text-white/70 mb-8" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Complete breakdown of all fee types</p>
 
           <div className="fee-table mb-8">
-            <h2 className="font-general text-xl uppercase text-white font-bold mb-4 bg-violet-300/20 p-3 rounded-lg">I. College Fees (Common for All)</h2>
+            <h2 className="text-xl uppercase text-white font-bold mb-4 bg-violet-400/30 p-3 rounded-lg" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.05em' }}>I. College Fees (Common for All)</h2>
             <div className="border-2 border-white/20 rounded-lg overflow-hidden bg-black/50">
               <table className="w-full">
                 <thead className="bg-violet-300/20">
                   <tr>
-                    <th className="px-6 py-4 text-left font-general text-sm uppercase text-white font-bold">Particulars</th>
-                    <th className="px-6 py-4 text-right font-general text-sm uppercase text-white font-bold">Amount (₹)</th>
+                    <th className="px-6 py-4 text-left text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Particulars</th>
+                    <th className="px-6 py-4 text-right text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Amount (₹)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {collegeFees.map((fee, index) => (
                     <tr key={index} className="border-t border-white/20 hover:bg-white/10 transition-colors">
-                      <td className="px-6 py-3 font-circular-web text-base text-white">{fee.name}</td>
-                      <td className="px-6 py-3 text-right font-circular-web text-base text-white font-semibold">{fee.amount.toLocaleString('en-IN')}</td>
+                      <td className="px-6 py-3 text-base text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.name}</td>
+                      <td className="px-6 py-3 text-right text-base text-white font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.amount.toLocaleString('en-IN')}</td>
                     </tr>
                   ))}
                   <tr className="border-t-2 border-white/30 bg-violet-300/30">
-                    <td className="px-6 py-4 font-general text-base uppercase text-white font-bold">Common Fees Total</td>
-                    <td className="px-6 py-4 text-right font-zentry text-2xl text-white font-bold">₹12,332</td>
+                    <td className="px-6 py-4 text-base uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Common Fees Total</td>
+                    <td className="px-6 py-4 text-right text-2xl text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>₹12,332</td>
                   </tr>
                 </tbody>
               </table>
@@ -129,22 +129,22 @@ const FeeStructureModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           <div className="fee-table mb-8">
-            <h2 className="font-general text-xl uppercase text-white font-bold mb-4 bg-violet-300/20 p-3 rounded-lg">Tuition Fees by Admission Category</h2>
+            <h2 className="text-xl uppercase text-white font-bold mb-4 bg-violet-400/30 p-3 rounded-lg" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.05em' }}>Tuition Fees by Admission Category</h2>
             <div className="border-2 border-white/20 rounded-lg overflow-hidden bg-black/50">
               <table className="w-full">
                 <thead className="bg-violet-300/20">
                   <tr>
-                    <th className="px-6 py-4 text-left font-general text-sm uppercase text-white font-bold">Category</th>
-                    <th className="px-6 py-4 text-right font-general text-sm uppercase text-white font-bold">Tuition Fee (₹)</th>
-                    <th className="px-6 py-4 text-right font-general text-sm uppercase text-white font-bold">Total (₹)</th>
+                    <th className="px-6 py-4 text-left text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Category</th>
+                    <th className="px-6 py-4 text-right text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Tuition Fee (₹)</th>
+                    <th className="px-6 py-4 text-right text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Total (₹)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {tuitionFees.map((fee, index) => (
                     <tr key={index} className="border-t border-white/20 hover:bg-white/10 transition-colors">
-                      <td className="px-6 py-3 font-circular-web text-base text-white">{fee.category}</td>
-                      <td className="px-6 py-3 text-right font-circular-web text-base text-white font-semibold">{fee.tuition.toLocaleString('en-IN')}</td>
-                      <td className="px-6 py-3 text-right font-zentry text-xl text-white font-bold">{fee.total.toLocaleString('en-IN')}</td>
+                      <td className="px-6 py-3 text-base text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.category}</td>
+                      <td className="px-6 py-3 text-right text-base text-white font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.tuition.toLocaleString('en-IN')}</td>
+                      <td className="px-6 py-3 text-right text-xl text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.total.toLocaleString('en-IN')}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -153,25 +153,25 @@ const FeeStructureModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           <div className="fee-table mb-8">
-            <h2 className="font-general text-xl uppercase text-white font-bold mb-4 bg-violet-300/20 p-3 rounded-lg">II. Development Fees</h2>
+            <h2 className="text-xl uppercase text-white font-bold mb-4 bg-violet-400/30 p-3 rounded-lg" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.05em' }}>II. Development Fees</h2>
             <div className="border-2 border-white/20 rounded-lg overflow-hidden bg-black/50">
               <table className="w-full">
                 <thead className="bg-violet-300/20">
                   <tr>
-                    <th className="px-6 py-4 text-left font-general text-sm uppercase text-white font-bold">Particulars</th>
-                    <th className="px-6 py-4 text-right font-general text-sm uppercase text-white font-bold">Amount (₹)</th>
+                    <th className="px-6 py-4 text-left text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Particulars</th>
+                    <th className="px-6 py-4 text-right text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Amount (₹)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {developmentFees.map((fee, index) => (
                     <tr key={index} className="border-t border-white/20 hover:bg-white/10 transition-colors">
-                      <td className="px-6 py-3 font-circular-web text-base text-white">{fee.name}</td>
-                      <td className="px-6 py-3 text-right font-circular-web text-base text-white font-semibold">{fee.amount.toLocaleString('en-IN')}</td>
+                      <td className="px-6 py-3 text-base text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.name}</td>
+                      <td className="px-6 py-3 text-right text-base text-white font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.amount.toLocaleString('en-IN')}</td>
                     </tr>
                   ))}
                   <tr className="border-t-2 border-white/30 bg-violet-300/30">
-                    <td className="px-6 py-4 font-general text-base uppercase text-white font-bold">Total</td>
-                    <td className="px-6 py-4 text-right font-zentry text-2xl text-white font-bold">₹20,000</td>
+                    <td className="px-6 py-4 text-base uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Total</td>
+                    <td className="px-6 py-4 text-right text-2xl text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>₹20,000</td>
                   </tr>
                 </tbody>
               </table>
@@ -179,13 +179,13 @@ const FeeStructureModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           <div className="fee-table mb-8">
-            <h2 className="font-general text-xl uppercase text-white font-bold mb-4 bg-violet-300/20 p-3 rounded-lg">III. Examination Fees</h2>
+            <h2 className="text-xl uppercase text-white font-bold mb-4 bg-violet-400/30 p-3 rounded-lg" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.05em' }}>III. Examination Fees</h2>
             <div className="border-2 border-white/20 rounded-lg overflow-hidden bg-black/50">
               <table className="w-full">
                 <tbody>
                   <tr className="border-t border-white/20 hover:bg-white/10 transition-colors">
-                    <td className="px-6 py-4 font-circular-web text-base text-white">CIE and Semester End Exam</td>
-                    <td className="px-6 py-4 text-right font-zentry text-2xl text-white font-bold">₹4,200</td>
+                    <td className="px-6 py-4 text-base text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>CIE and Semester End Exam</td>
+                    <td className="px-6 py-4 text-right text-2xl text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>₹4,200</td>
                   </tr>
                 </tbody>
               </table>
@@ -193,20 +193,20 @@ const FeeStructureModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () =
           </div>
 
           <div className="fee-table">
-            <h2 className="font-general text-xl uppercase text-white font-bold mb-4 bg-violet-300/20 p-3 rounded-lg">IV. Hostel Fees (Annual)</h2>
+            <h2 className="text-xl uppercase text-white font-bold mb-4 bg-violet-400/30 p-3 rounded-lg" style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, sans-serif', letterSpacing: '0.05em' }}>IV. Hostel Fees (Annual)</h2>
             <div className="border-2 border-white/20 rounded-lg overflow-hidden bg-black/50">
               <table className="w-full">
                 <thead className="bg-violet-300/20">
                   <tr>
-                    <th className="px-6 py-4 text-left font-general text-sm uppercase text-white font-bold">Block</th>
-                    <th className="px-6 py-4 text-right font-general text-sm uppercase text-white font-bold">Amount (₹)</th>
+                    <th className="px-6 py-4 text-left text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Block</th>
+                    <th className="px-6 py-4 text-right text-sm uppercase text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>Amount (₹)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {hostelFees.map((fee, index) => (
                     <tr key={index} className="border-t border-white/20 hover:bg-white/10 transition-colors">
-                      <td className="px-6 py-4 font-circular-web text-base text-white">{fee.name}</td>
-                      <td className="px-6 py-4 text-right font-zentry text-2xl text-white font-bold">{fee.amount.toLocaleString('en-IN')}</td>
+                      <td className="px-6 py-4 text-base text-white" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.name}</td>
+                      <td className="px-6 py-4 text-right text-2xl text-white font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>{fee.amount.toLocaleString('en-IN')}</td>
                     </tr>
                   ))}
                 </tbody>

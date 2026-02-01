@@ -218,12 +218,14 @@ const Hero = () => {
                 type="text"
                 name="usn"
                 placeholder="USN"
+                defaultValue="2BA23IS083"
                 className="w-full px-4 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 focus:bg-white/15 transition-all"
               />
               <input
                 type="password"
                 name="password"
                 placeholder="Password"
+                defaultValue="1210Done."
                 className="w-full px-4 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/30 focus:bg-white/15 transition-all"
               />
               <button

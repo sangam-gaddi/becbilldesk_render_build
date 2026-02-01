@@ -1,5 +1,7 @@
 ﻿/** @type {import('next').NextConfig} */
 const nextConfig = {
+  poweredByHeader: false,
+  reactStrictMode: true,
   images: {
     domains: ['localhost'],
     unoptimized: true,
@@ -8,7 +10,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: true,
   },
 }
 

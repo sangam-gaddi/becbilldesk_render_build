@@ -22,9 +22,9 @@ export default async function handler(req: NextApiRequest, res: any) {
     path: '/api/socket',
     addTrailingSlash: false,
     cors: {
-      origin: '*',
+      origin: process.env.NEXT_PUBLIC_APP_URL || '*',
       methods: ['GET', 'POST'],
-      credentials: false,
+      credentials: true,
     },
     transports: ['polling'],
     allowEIO3: true,
@@ -40,28 +40,28 @@ export default async function handler(req: NextApiRequest, res: any) {
     socket.on('join', (data) => {
       try {
         const { usn, name } = data;
-        
+
         socket.data.usn = usn;
         socket.data.name = name;
-        
+
         socket.join('global');
         socket.join(`user:${usn}`);
-        
+
         connectedUsers.set(usn, {
           usn,
           name,
           socketId: socket.id,
           connectedAt: new Date(),
         });
-        
+
         console.log(` ${name} (${usn}) joined | Total: ${connectedUsers.size}`);
-        
+
         io.emit('user-online', {
           usn,
           name,
           totalOnline: connectedUsers.size,
         });
-        
+
         const onlineUsersList = Array.from(connectedUsers.values())
           .filter(u => u.usn !== usn)
           .map(u => ({
@@ -69,9 +69,9 @@ export default async function handler(req: NextApiRequest, res: any) {
             name: u.name,
             studentName: u.name,
           }));
-        
+
         socket.emit('online-users-list', { users: onlineUsersList });
-        
+
         console.log(` Sent ${onlineUsersList.length} online users to ${name}`);
       } catch (error) {
         console.error(' Error in join:', error);
@@ -96,7 +96,7 @@ export default async function handler(req: NextApiRequest, res: any) {
         console.log(` Global: ${socket.data.name}: "${data.message.substring(0, 30)}..."`);
 
         io.emit('new-global-message', messageData);
-        
+
         console.log(` Broadcast to ${io.engine.clientsCount} clients`);
       } catch (error) {
         console.error(' Error sending global message:', error);
@@ -152,7 +152,7 @@ export default async function handler(req: NextApiRequest, res: any) {
             name: u.name,
             studentName: u.name,
           }));
-        
+
         socket.emit('online-users-list', { users: onlineUsersList });
       } catch (error) {
         console.error(' Error fetching online users:', error);
@@ -162,15 +162,15 @@ export default async function handler(req: NextApiRequest, res: any) {
     socket.on('disconnect', (reason) => {
       try {
         console.log(` Disconnected: ${socket.id} (${reason})`);
-        
+
         if (socket.data.usn) {
           connectedUsers.delete(socket.data.usn);
-          
+
           io.emit('user-offline', {
             usn: socket.data.usn,
             totalOnline: connectedUsers.size,
           });
-          
+
           console.log(` ${socket.data.name} left | Total: ${connectedUsers.size}`);
         }
       } catch (error) {

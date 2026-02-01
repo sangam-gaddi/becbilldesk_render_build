@@ -148,10 +148,13 @@ export default function SignupPage() {
                   required
                   maxLength={10}
                 />
-                <p className="text-xs text-gray-400 -mt-4 mb-4 ml-1">
+                <p className="text-xs text-gray-400 -mt-4 mb-2 ml-1">
                   Your name will be fetched automatically from USN
                 </p>
-                
+                <p className="text-xs text-gray-500 -mt-1 mb-4 ml-1 italic">
+                  Format: 2BA23ISXXX (XXX = 001 to 120)
+                </p>
+
                 <Input
                   icon={Mail}
                   type="email"
@@ -260,7 +263,7 @@ export default function SignupPage() {
                   }}
                   className="w-full mt-3 text-sm text-gray-400 hover:text-white transition-colors"
                 >
-                   Back to recovery phrase
+                  Back to recovery phrase
                 </button>
               </>
             )}

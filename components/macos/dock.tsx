@@ -8,7 +8,7 @@ import type { AppWindow } from "@/components/macos/types"
 
 const dockApps = [
     { id: "launchpad", title: "Launchpad", icon: "/launchpad.png", component: "Launchpad", isSystem: true },
-    { id: "payments", title: "BillDesk", icon: "/img/logo.png", component: "Payments" },
+    { id: "payments", title: "BillDesk", icon: "/billdesk-icon.png", component: "Payments" },
     { id: "billdesk-chat", title: "Chat", icon: "/facetime.png", component: "BillDeskChat" },
     { id: "safari", title: "Safari", icon: "/safari.png", component: "Safari" },
     { id: "terminal", title: "Terminal", icon: "/terminal.png", component: "Terminal" },
